@@ -353,14 +353,14 @@ setInterval(function(){if (document.querySelector("button#spamLastEmoteBtn.on"))
 				 localStorage.setItem("seenShill", "1");
 			}
 			const meny = document.querySelector("#overlays.fade-in");
-			var bleb = document.createElement("video");
+			var bleb = document.createElement("img");
 			bleb.style.height = "100%";
 		  bleb.style.width = "100%";
 			//bleb.src = "https://wallpapercave.com/wp/wp5756494.jpg";
 			// bleb.src = "https://w0.peakpx.com/wallpaper/116/459/HD-wallpaper-microchip-neon-lines-black-background-chips-technology-backgrounds.jpg"
 			//bleb.src = "https://t4.ftcdn.net/jpg/04/85/09/93/360_F_485099383_Xo4TQMQIhaS30fEy5aZkwLB9dR9fujqe.jpg";
-			//bleb.src = "https://i.imgur.com/xEeLWam.png"
-			bleb.src = "https://i.imgur.com/TJJ3Yty.mp4"
+			bleb.src = "https://i.imgur.com/xEeLWam.png"
+			//bleb.src = "https://i.imgur.com/TJJ3Yty.mp4"
 			//bleb.src = "https://wallpaper.dog/large/10724660.jpg";
 			//bleb.src = "https://wallpaperaccess.com/full/5344385.jpg";
 
