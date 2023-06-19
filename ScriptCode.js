@@ -353,7 +353,7 @@ setInterval(function(){if (document.querySelector("button#spamLastEmoteBtn.on"))
 				 localStorage.setItem("seenShill", "1");
 			}
 			const meny = document.querySelector("#overlays.fade-in");
-			var bleb = document.createElement("img");
+			var bleb = document.createElement("video");
 			bleb.style.height = "100%";
 		  bleb.style.width = "100%";
 			//bleb.src = "https://wallpapercave.com/wp/wp5756494.jpg";
