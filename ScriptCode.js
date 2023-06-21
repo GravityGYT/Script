@@ -28,6 +28,25 @@ myDiscord.style.backgroundRepeat = "no-repeat";
 
 var customSkinList = ["https://yt3.googleusercontent.com/TNVorEJ9iTsESmUbcZXizwaZgy5jB-Ihx3z9qxfuuatrFRDhJHotz5x_X7mGIu38VBsr5bvlkg=s176-c-k-c0x00ffffff-no-rj" ]
 
+
+function checkCustomSkin(customLink){
+	var customExists = false
+
+     	var customSkins = document.querySelector(".customSkinContainer").children;
+	for (let i = 0; i<customSkins.length; i++){
+		if (customLink != customSkins[i].src){
+			customExists = false;
+
+		} else {
+			customExists = true;
+			break;
+
+		}
+	}
+
+	return customExists;
+}
+
 	var mainContainer = document.querySelector("label").nextElementSibling;
 var customSkinContainer = document.createElement("div");
 customSkinContainer.setAttribute("class", "customSkinContainer");
@@ -38,7 +57,7 @@ saveSkinBtn.append(saveSkinText);
 saveSkinBtn.style = "height: 50px; width: 100px; background: lightgreen; border-radius: 25px;";
 
 saveSkinBtn.onclick = ()=> {
-	if (document.querySelector("#customSkin").value){
+	if (document.querySelector("#customSkin").value && !checkCustomSkin(document.querySelector("#customSkin").value)){
 			addNewCustomSkin("Skin" + document.querySelector(".customSkinContainer").children.length, document.querySelector("#customSkin").value, 1);
 			if (localStorage.getItem("customSkins")){
 				localStorage.setItem("customSkins", localStorage.getItem("customSkins") + ", " + document.querySelector("#customSkin").value);
@@ -86,6 +105,7 @@ mainContainer.append(customSkinContainer);
 function addNewCustomSkin(name, link, custom) {
 
     var newSkin = document.createElement("img");
+
 	if (custom == 0) {
 		newSkin.setAttribute("class", name);
 	} else {
@@ -96,9 +116,23 @@ function addNewCustomSkin(name, link, custom) {
 		}
 	}
     mainContainer.style = "";
+	newSkin.addEventListener("mouseenter", (event)=>{
+		if (event){
+			newSkin.style.transform = "scale(1.2)";
+		}
+	});
+	newSkin.addEventListener("mouseleave", (event)=>{
+		if (event){
+			newSkin.style.transform = "scale(1)";
+		}
+	});
+
+
     customSkinContainer.append(newSkin);
+
+	customSkinContainer.style.overflow = "visible"
     document.querySelector("." + name).src = link;
-    document.querySelector("." + name).style = "height: 100px; width: 100px; border-radius: 50%; cursor: pointer; border: 1.5px solid blue; border-style: dotted;";
+    document.querySelector("." + name).style = "height: 100px; width: 100px; border-radius: 50%; cursor: pointer; border: 1.5px solid blue; border-style: dotted; transition: all 1s ease";
 document.querySelector("." + name).onclick = ()=>{settings.customSkin = link; connect(settings.server); document.querySelector(".windowclosebtn").click();};
 }
 
@@ -127,9 +161,9 @@ document.querySelector("." + name).onclick = ()=>{settings.customSkin = link; co
 		const logo = document.createElement("img");
 		const node = document.createElement("p");
 		//var numBots = checkBots();
-		//const textnode = document.createTextNode("Shazam's snay.io script.   ");
+		const textnode = document.createTextNode("Shazam's snay.io script.   ");
 		const menuTitle = document.querySelector("#title");
-		menuTitle.src = "https://raw.githubusercontent.com/GravityGYT/Script/main/shazam.png";
+		menuTitle.src = "https://raw.githubusercontent.com/ShazamHax/Snay.io-Script/main/6pJtFAS.png";
 		menuTitle.style.position = "absolute";
 		menuTitle.style.height = "35%";
 		menuTitle.style.width = "50%";
@@ -359,8 +393,7 @@ setInterval(function(){if (document.querySelector("button#spamLastEmoteBtn.on"))
 			//bleb.src = "https://wallpapercave.com/wp/wp5756494.jpg";
 			// bleb.src = "https://w0.peakpx.com/wallpaper/116/459/HD-wallpaper-microchip-neon-lines-black-background-chips-technology-backgrounds.jpg"
 			//bleb.src = "https://t4.ftcdn.net/jpg/04/85/09/93/360_F_485099383_Xo4TQMQIhaS30fEy5aZkwLB9dR9fujqe.jpg";
-			//bleb.src = "https://i.imgur.com/xEeLWam.png"
-			bleb.src = "https://i.imgur.com/3pVwjD6.png"
+			bleb.src = "https://static.vecteezy.com/system/resources/previews/000/664/710/original/vector-abstract-technology-background-hi-tech-communication-digital-background.jpg";
 			//bleb.src = "https://wallpaper.dog/large/10724660.jpg";
 			//bleb.src = "https://wallpaperaccess.com/full/5344385.jpg";
 
@@ -438,7 +471,7 @@ for (let i = 0; i<emojiLinks.length; i++){
     newButton.style = "width: 50px; height: 50px;";
     newButton.setAttribute("class", "emojiBind" + i)
     newEmoji.src = emojiLinks[i];
-    newEmoji.style = "height: 50px; width: 50px; border-radius: 50%; border: 1px solid blue";
+    newEmoji.style = "height: 50px; width: 50px; border-radius: 50%; border: 1px solid blue; transform: translate(100px, 0px);";
     newEmoji.setAttribute("class", "emoji" + i);
     document.querySelector("#keys").append(newEmoji);
     document.querySelector("#keys").append(newButton);
@@ -487,16 +520,16 @@ emojiBindBtns[i].onclick = ()=>{
 		}
 	}
 
-		setTimeout(setupEmojiSettings, 8000);
 
-	/*
+
+
 	var checkEmojiBindInterval = setInterval(()=>{
-		if (document.querySelector("#profile-btn.fade-in") && !document.querySelector(".emojiBind4")){
-			setupEmojiSettings();
+		if (document.querySelector("#profile-btn.fade-in")){
+			clearInterval(checkEmojiBindInterval);
+			setTimeout(()=>{setupEmojiSettings();}, 6000);
 		}
 
-	}, 1500);
-	*/
+	});
 
 
 
@@ -648,7 +681,7 @@ emojiBindBtns[i].onclick = ()=>{
 									if (document.querySelector("#chat_textbox").value == ""){
 										document.querySelector("img[src='"+ daLink + "']").click()
 									}
-									 
+
 								}
 							}
 							}
@@ -800,7 +833,58 @@ Stats.append(newStats);
 newStats.append(cellsContainer);
 cellsContainer.append(currentSplitsText);
 cellsContainer.append(currentSplits);
+setInterval(()=>{
+	var lvlSkins = document.querySelector("label[for='Level']").nextElementSibling.firstChild.children;
+function getSkinLvl(skin){
+    return skin.firstChild.nextElementSibling.innerText
+}
+for (let i = 0; i<lvlSkins.length; i++){
+    if (parseInt(getSkinLvl(lvlSkins[i]))>parseInt(document.querySelector("#account-lvl").innerText)){
+        lvlSkins[i].style.filter = "grayscale(100%) brightness(40%)"
+    } else {
+	 lvlSkins[i].style.filter = "";
+    }
+}
 
+}, 1000);
+setInterval(()=>{
+    if (document.querySelector("#modmenubtn").checkVisibility() == false && document.querySelector("#modmenu").checkVisibility() == false){
+        document.querySelector("#modmenubtn").hidden = "";
+    }
+}, 1000);
+/*
+
+function removeBoughtPremiumSkins(){
+var premiumSkins = document.querySelector("label[for='Premium']").nextElementSibling.firstChild.querySelectorAll("img");
+
+function checkBought(premiumSkin){
+    var skinBought = false;
+
+         if (premiumSkin.parentElement.nextElementSibling.innerText == ""){
+        skinBought = true;
+        }
+
+
+
+    return skinBought;
+}
+
+
+for (let i = 0; i<premiumSkins.length; i++){
+    if (checkBought(premiumSkins[i])){
+        premiumSkins[i].parentElement.remove();
+
+    } else {
+        continue;
+    }
+}
+}
+setInterval(()=>{
+    if (document.querySelector("label[for='Premium']")){
+        removeBoughtPremiumSkins();
+    }
+})
+*/
 
 setInterval(()=>{
     if (window.settings.gamemode == "Selfeed"){
@@ -809,8 +893,8 @@ setInterval(()=>{
 	    	 currentSplits.innerText = window.stats.mycells + "/16";
     }
 
-    
-    
+
+
 });
 
 
