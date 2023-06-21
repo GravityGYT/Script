@@ -1,30 +1,5 @@
 
     'use strict';
-	var myPatreon = document.createElement("div");
-//myPatreon.style = "height: 50px; width: 120px; position: absolute; background-image: url('https://cdn.dribbble.com/users/2287419/screenshots/15177508/media/685ba889bceaec17a7742495ff1a4f92.gif'); border-radius: 25px; border: 2px solid blue";
-myPatreon.style = "height: 50px; width: 120px; position: absolute; border-radius: 25px; border: 2px solid blue; background: gray; text-align: center; color: white;";
-myPatreon.innerText = "Patreon";
-document.querySelector("#main-menu").append(myPatreon)
-
-myPatreon.style.top = "35px";
-myPatreon.style.right = "5px";
-myPatreon.style.backgroundSize = "100% 100%";
-  myPatreon.setAttribute("class", "ShazamPatreon");
-myPatreon.onclick = ()=>{
-    window.open("https://patreon.com/ShazamHax?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=creatorshare_creator&utm_content=join_link");
-}
-myPatreon.style.cursor = "pointer";
-	var myDiscord = document.createElement("div");
-//myDiscord.style = "height: 50px; width: 120px; position: absolute; top: -15px; right: 5px; background-image: url('https://cdn.dribbble.com/users/5242374/screenshots/16641455/media/0a74ea6b1d505b316ced8be139175fc3.gif'); border: 2px solid blue; border-radius: 25px;";
-myDiscord.style = "height: 50px; width: 120px; position: absolute; top: -15px; right: 5px; border: 2px solid blue; border-radius: 25px; background: gray; text-align: center; color: white;";
-myDiscord.innerText = "Discord";
-    document.querySelector("#main-menu").append(myDiscord);
-    myDiscord.onclick = ()=>{
-    window.open("https://discord.gg/realclan");
-}
-myDiscord.style.cursor = "pointer";
-myDiscord.style.backgroundSize = "100% 100%";
-myDiscord.style.backgroundRepeat = "no-repeat";
 
 var customSkinList = ["https://yt3.googleusercontent.com/TNVorEJ9iTsESmUbcZXizwaZgy5jB-Ihx3z9qxfuuatrFRDhJHotz5x_X7mGIu38VBsr5bvlkg=s176-c-k-c0x00ffffff-no-rj" ]
 
