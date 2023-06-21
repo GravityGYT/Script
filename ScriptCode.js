@@ -1,22 +1,5 @@
 
     'use strict';
-    document.querySelector('#play-btn').style.borderColor = '#fff0';
-    document.querySelector('#spectate-btn').style.borderColor = '#fff0';
-    document.querySelector('#settings-btn').style.borderColor = '#fff0';
-    if(document.querySelector('#gallery-btn')){
-    document.querySelector('#gallery-btn').style.boxShadow = '0 0 10px 3px #000000';
-    }
-    if(document.querySelector('#gallery-btn')){
-    document.querySelector('#gallery-btn').style.borderradius = '30px';
-    document.querySelector('.main-form-bg').style.textAlign = 'center';
-    document.querySelector('.main-form-bg').style.backgroundColor = 'rgba(0,0,0,.0)';
-    }
-    if(document.querySelector('#modmenu')){
-    document.querySelector('#modmenu').style.borderRadius = '30px';
-    }
-    if(document.querySelector('#modmenu')){
-    document.querySelector('#modmenu').style.borderRadius = '30px';
-}
 var customSkinList = ["https://yt3.googleusercontent.com/TNVorEJ9iTsESmUbcZXizwaZgy5jB-Ihx3z9qxfuuatrFRDhJHotz5x_X7mGIu38VBsr5bvlkg=s176-c-k-c0x00ffffff-no-rj" ]
 
 
