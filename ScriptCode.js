@@ -127,7 +127,7 @@ document.querySelector("." + name).onclick = ()=>{settings.customSkin = link; co
 		const logo = document.createElement("img");
 		const node = document.createElement("p");
 		//var numBots = checkBots();
-		const textnode = document.createTextNode("Shazam's snay.io script.   ");
+		//const textnode = document.createTextNode("Shazam's snay.io script.   ");
 		const menuTitle = document.querySelector("#title");
 		menuTitle.src = "https://raw.githubusercontent.com/GravityGYT/Script/main/shazam.png";
 		menuTitle.style.position = "absolute";
