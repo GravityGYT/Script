@@ -355,12 +355,7 @@ setInterval(function(){if (document.querySelector("button#spamLastEmoteBtn.on"))
 
 
 
-	window.addEventListener("load", ()=>{
-             if (localStorage.getItem("seenShill")){
-			} else {
-				 swal("Please consider checking out my Patreon!");
-				 localStorage.setItem("seenShill", "1");
-			}
+
 			const meny = document.querySelector("#overlays.fade-in");
 			var bleb = document.createElement("img");
 			bleb.style.height = "100%";
