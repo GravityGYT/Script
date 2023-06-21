@@ -163,7 +163,7 @@ document.querySelector("." + name).onclick = ()=>{settings.customSkin = link; co
 		//var numBots = checkBots();
 		const textnode = document.createTextNode("Shazam's snay.io script.   ");
 		const menuTitle = document.querySelector("#title");
-		menuTitle.src = "https://github.com/GravityGYT/Script/blob/main/shazam.png?raw=true";
+		menuTitle.src = "https://i.imgur.com/tH2BBwo.png";
 		menuTitle.style.position = "absolute";
 		menuTitle.style.height = "35%";
 		menuTitle.style.width = "50%";
