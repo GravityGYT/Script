@@ -11186,7 +11186,7 @@
                             }
                             let c = {
                                 type: "spinToStop",
-                                duration: 10,
+                                duration: 0,
                                 spins: 7,
                                 easing: "Power1.easeOut",
                                 startAngle: 0,
